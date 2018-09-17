@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ZWServerEnvironmentManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    ZWServerEnvironmentManager *manager = [ZWServerEnvironmentManager manager];
+    [manager typicalInitialization:^(ZWServerEnvironmentConfiguration *debugEnvironmentConfiguration, ZWServerEnvironmentConfiguration *releaseEnvironmentConfiguration) {
+        debugEnvironmentConfiguration.domain = @"http://www.dev-domain01";
+        debugEnvironmentConfiguration.otherCommonFields = @"news";
+        
+        releaseEnvironmentConfiguration.domain = @"http://www.pro-domain01";
+        releaseEnvironmentConfiguration.otherCommonFields = @"news";
+    }];
+    
+    [manager switchToDebug];
+    
     return YES;
 }
 

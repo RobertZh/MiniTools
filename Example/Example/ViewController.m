@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "ZWServerEnvironmentManager.h"
+#import "ZWAViewController.h"
 
 @interface ViewController ()
 
@@ -14,15 +16,43 @@
 
 @implementation ViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    ZWServerEnvironmentManager *mgr = [ZWServerEnvironmentManager manager];
+    
+    [mgr updateCurrentEnvironmentConfigurationForOnce:YES configuration:^ZWServerEnvironmentConfiguration *(ZWServerEnvironmentConfiguration *configuration) {
+        configuration.domain = @"http://www.temp-domain01";
+        [configuration updateURLStringWithDomainName:@"http://www.temp-domain02" otherCommonFields:@"v1", @"news", nil];
+        NSLog(@"------------------------------------------------");
+        NSLog(@"url : %@", configuration.baseURL);
+        NSLog(@"------------------------------------------------");
+        return configuration;
+    }];
+    
+    
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSLog(@"------------------------------------------------");
+    NSLog(@"url : %@", ZWServerEnvironmentManager.manager.currentEnvironmentConfiguration.baseURL);
+    NSLog(@"------------------------------------------------");
+    
+}
+
+- (IBAction)pushA:(id)sender {
+    ZWAViewController *avc = ZWAViewController.new;
+    [self.navigationController pushViewController:((void)(avc.view.backgroundColor = UIColor.whiteColor), avc) animated:YES];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    NSLog(@"------------------------------------------------");
+    NSLog(@"url : %@", [ZWServerEnvironmentManager manager].currentEnvironmentConfiguration.baseURL);
+    NSLog(@"------------------------------------------------");
 }
 
 

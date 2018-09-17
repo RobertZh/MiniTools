@@ -16,6 +16,11 @@
 		DB147CAA214CD81800F30053 /* ExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CA9214CD81800F30053 /* ExampleTests.m */; };
 		DB147CB9214CD83D00F30053 /* ZWModelNode.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CB6214CD83C00F30053 /* ZWModelNode.m */; };
 		DB147CBA214CD83D00F30053 /* ZWSCNNodeLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CB8214CD83C00F30053 /* ZWSCNNodeLoader.m */; };
+		DB147CC1214CD97300F30053 /* ZWServerEnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CC0214CD97300F30053 /* ZWServerEnvironmentManager.m */; };
+		DB147CC3214CDD9A00F30053 /* ZWServerEnvironmentManagerTest.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CC2214CDD9A00F30053 /* ZWServerEnvironmentManagerTest.m */; };
+		DB147CC4214CDDA800F30053 /* ZWServerEnvironmentManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DB147CC0214CD97300F30053 /* ZWServerEnvironmentManager.m */; };
+		DBF2A107214F444100533D0A /* ZWServerEnvironmentConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF2A106214F444100533D0A /* ZWServerEnvironmentConfiguration.m */; };
+		DBF2A10D214F9A5800533D0A /* ZWAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBF2A10C214F9A5800533D0A /* ZWAViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +51,13 @@
 		DB147CB6214CD83C00F30053 /* ZWModelNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWModelNode.m; sourceTree = "<group>"; };
 		DB147CB7214CD83C00F30053 /* ZWModelNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWModelNode.h; sourceTree = "<group>"; };
 		DB147CB8214CD83C00F30053 /* ZWSCNNodeLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWSCNNodeLoader.m; sourceTree = "<group>"; };
+		DB147CBF214CD97300F30053 /* ZWServerEnvironmentManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWServerEnvironmentManager.h; sourceTree = "<group>"; };
+		DB147CC0214CD97300F30053 /* ZWServerEnvironmentManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWServerEnvironmentManager.m; sourceTree = "<group>"; };
+		DB147CC2214CDD9A00F30053 /* ZWServerEnvironmentManagerTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWServerEnvironmentManagerTest.m; sourceTree = "<group>"; };
+		DBF2A105214F444100533D0A /* ZWServerEnvironmentConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWServerEnvironmentConfiguration.h; sourceTree = "<group>"; };
+		DBF2A106214F444100533D0A /* ZWServerEnvironmentConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWServerEnvironmentConfiguration.m; sourceTree = "<group>"; };
+		DBF2A10B214F9A5800533D0A /* ZWAViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZWAViewController.h; sourceTree = "<group>"; };
+		DBF2A10C214F9A5800533D0A /* ZWAViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWAViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +99,14 @@
 		DB147C8F214CD81700F30053 /* Example */ = {
 			isa = PBXGroup;
 			children = (
+				DB147CBB214CD8A800F30053 /* Networking */,
 				DB147CB4214CD83C00F30053 /* AR */,
 				DB147C90214CD81700F30053 /* AppDelegate.h */,
 				DB147C91214CD81700F30053 /* AppDelegate.m */,
 				DB147C93214CD81700F30053 /* ViewController.h */,
 				DB147C94214CD81700F30053 /* ViewController.m */,
+				DBF2A10B214F9A5800533D0A /* ZWAViewController.h */,
+				DBF2A10C214F9A5800533D0A /* ZWAViewController.m */,
 				DB147C96214CD81700F30053 /* Main.storyboard */,
 				DB147C99214CD81800F30053 /* Assets.xcassets */,
 				DB147C9B214CD81800F30053 /* LaunchScreen.storyboard */,
@@ -105,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				DB147CA9214CD81800F30053 /* ExampleTests.m */,
+				DB147CC2214CDD9A00F30053 /* ZWServerEnvironmentManagerTest.m */,
 				DB147CAB214CD81800F30053 /* Info.plist */,
 			);
 			path = ExampleTests;
@@ -113,12 +129,23 @@
 		DB147CB4214CD83C00F30053 /* AR */ = {
 			isa = PBXGroup;
 			children = (
-				DB147CB5214CD83C00F30053 /* ZWSCNNodeLoader.h */,
 				DB147CB6214CD83C00F30053 /* ZWModelNode.m */,
 				DB147CB7214CD83C00F30053 /* ZWModelNode.h */,
+				DB147CB5214CD83C00F30053 /* ZWSCNNodeLoader.h */,
 				DB147CB8214CD83C00F30053 /* ZWSCNNodeLoader.m */,
 			);
 			path = AR;
+			sourceTree = "<group>";
+		};
+		DB147CBB214CD8A800F30053 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DB147CBF214CD97300F30053 /* ZWServerEnvironmentManager.h */,
+				DB147CC0214CD97300F30053 /* ZWServerEnvironmentManager.m */,
+				DBF2A105214F444100533D0A /* ZWServerEnvironmentConfiguration.h */,
+				DBF2A106214F444100533D0A /* ZWServerEnvironmentConfiguration.m */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +192,7 @@
 		DB147C85214CD81700F30053 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = ZW;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = zhangwei;
 				TargetAttributes = {
@@ -223,9 +251,12 @@
 			files = (
 				DB147CBA214CD83D00F30053 /* ZWSCNNodeLoader.m in Sources */,
 				DB147CB9214CD83D00F30053 /* ZWModelNode.m in Sources */,
+				DBF2A107214F444100533D0A /* ZWServerEnvironmentConfiguration.m in Sources */,
 				DB147C95214CD81700F30053 /* ViewController.m in Sources */,
+				DB147CC1214CD97300F30053 /* ZWServerEnvironmentManager.m in Sources */,
 				DB147CA0214CD81800F30053 /* main.m in Sources */,
 				DB147C92214CD81700F30053 /* AppDelegate.m in Sources */,
+				DBF2A10D214F9A5800533D0A /* ZWAViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB147CC4214CDDA800F30053 /* ZWServerEnvironmentManager.m in Sources */,
 				DB147CAA214CD81800F30053 /* ExampleTests.m in Sources */,
+				DB147CC3214CDD9A00F30053 /* ZWServerEnvironmentManagerTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
